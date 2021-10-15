@@ -1,0 +1,15 @@
+<% @user.each do |user| %>
+    <%= 'id : ' %>
+    <%= link_to user.id %>
+    <%= ', uid : ' %>
+    <%= link_to user.uid %>
+    <%= ', pass : ' %>
+    <%= link_to user.pass %>
+    <%= link_to '削除', user_path(user.id), method: :delete %>
+    <br>
+<% end %>
+
+<%= link_to '新規追加', new_user_path %>
+<br>
+<%= link_to 'ログイン', top_login_path %>
+<%= link_to '戻る', :back %>

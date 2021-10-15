@@ -1,0 +1,10 @@
+<%= form_tag '/top/login', method: :post do %>
+    <%= label_tag :uid, 'ユーザーID' %>
+    <%= text_field_tag :uid %>
+    <%= label_tag :pass, 'パスワード' %>
+    <%= password_field_tag :pass %>
+    <%= submit_tag '登録' %>
+<% end %>
+<%= link_to 'ユーザ登録', new_user_path %>
+<br>
+<%= link_to 'メイン', top_login_path %>
