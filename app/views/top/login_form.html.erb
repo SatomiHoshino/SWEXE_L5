@@ -1,5 +1,10 @@
 <% @tweet.each do |tweet| %>
-    <%= tweet.message %>
-    <br>
+    <p>
+        <%= tweet.message %>
+    </p>
 <% end %>
+
 <%= link_to 'ログイン', top_main_path %>
+<p>
+<%= 'ログインしていません' %>
+</p>

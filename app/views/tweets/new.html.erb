@@ -9,10 +9,9 @@
 
 <%= form_for @tweet, url: {action: :create} do |f| %>
 <p>
-    <%= f.label :message, 'ツイートする' %>
+    <%= f.label :message, 'ツイート' %>
     <%= f.text_field :message %>
+    <%= f.submit '投稿' %>
 </p>
-<%= f.submit '投稿' %>
-<br>
 <%= link_to '戻る', :back %>
 <% end %>

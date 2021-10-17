@@ -1,15 +1,20 @@
 <% @user.each do |user| %>
-    <%= 'id : ' %>
-    <%= link_to user.id %>
-    <%= ', uid : ' %>
-    <%= link_to user.uid %>
-    <%= ', pass : ' %>
-    <%= link_to user.pass %>
-    <%= link_to '削除', user_path(user.id), method: :delete %>
-    <br>
+    <p>
+        <%= 'id : ' %>
+        <%= link_to user.id %>
+        <%= ', uid : ' %>
+        <%= link_to user.uid %>
+        <%= ', pass : ' %>
+        <%= link_to BCrypt::Password.create(user.pass) %>
+        <%= link_to '削除', user_path(user.id), method: :delete %>
+    </p>
 <% end %>
-
-<%= link_to '新規追加', new_user_path %>
-<br>
-<%= link_to 'ログイン', top_login_path %>
-<%= link_to '戻る', :back %>
+<p>
+    <%= link_to '新規登録', new_user_path %>
+</p>
+<p>
+    <%= link_to 'ログイン', top_main_path %>
+</p>
+<p>
+    <%= link_to 'メイン', top_login_form_path %>
+</p>

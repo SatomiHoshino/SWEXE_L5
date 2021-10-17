@@ -1,11 +1,18 @@
+<% if @user.errors.present? %>
+    <h3>ユーザIDがすでに使用されています。<br>
+    他のユーザIDを登録してください。
+    </h3>
+<% end %>
+
 <%= form_for @user, url: {action: :create} do |f| %>
 
     <%= f.label :uid, 'ユーザID : ' %>
     <%= f.text_field :uid %>
-    <br>
+    <br><br>
     <%= f.label :pass, 'パスワード : ' %>
     <%= f.text_field :pass %>
-    <br>
+    <br><br>
     <%= f.submit '登録' %>
+    <br><br>
     <%= link_to '戻る', :back %>
 <% end %>
